@@ -1,0 +1,1 @@
+/home/dveselov/.config/i3/
