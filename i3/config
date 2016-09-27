@@ -93,16 +93,18 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace [0: www]
-bindsym $mod+2 workspace [1: dev]
-bindsym $mod+3 workspace [2: im]
-bindsym $mod+4 workspace [3: media]
+bindsym $mod+1 workspace www
+bindsym $mod+2 workspace dev
+bindsym $mod+3 workspace term
+bindsym $mod+4 workspace im
+bindsym $mod+5 workspace media
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace [0: www]
-bindsym $mod+Shift+2 move container to workspace [1: dev]
-bindsym $mod+Shift+3 move container to workspace [2: im]
-bindsym $mod+Shift+4 move container to workspace [3: media]
+bindsym $mod+Shift+1 move container to workspace www
+bindsym $mod+Shift+2 move container to workspace dev
+bindsym $mod+Shift+3 move container to workspace term
+bindsym $mod+Shift+4 move container to workspace im
+bindsym $mod+Shift+5 move container to workspace media
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -147,7 +149,7 @@ set $inactive_text_color #036564
 
 bar {
         i3bar_command i3bar -t
-	status_command i3status
+	status_command i3blocks
 
         workspace_buttons yes
         tray_output none
