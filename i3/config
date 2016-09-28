@@ -92,19 +92,24 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $ws_1 "&#xf269; www"
+set $ws_2 "&#xf121; dev"
+set $ws_3 "&#xf120; term"
+set $ws_4 "&#xf1d8; im"
+set $ws_5 "&#xf144; media"
 # switch to workspace
-bindsym $mod+1 workspace www
-bindsym $mod+2 workspace dev
-bindsym $mod+3 workspace term
-bindsym $mod+4 workspace im
-bindsym $mod+5 workspace media
+bindsym $mod+1 workspace $ws_1
+bindsym $mod+2 workspace $ws_2
+bindsym $mod+3 workspace $ws_3
+bindsym $mod+4 workspace $ws_4
+bindsym $mod+5 workspace $ws_5
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace www
-bindsym $mod+Shift+2 move container to workspace dev
-bindsym $mod+Shift+3 move container to workspace term
-bindsym $mod+Shift+4 move container to workspace im
-bindsym $mod+Shift+5 move container to workspace media
+bindsym $mod+Shift+1 move container to workspace $ws_1
+bindsym $mod+Shift+2 move container to workspace $ws_2
+bindsym $mod+Shift+3 move container to workspace $ws_3
+bindsym $mod+Shift+4 move container to workspace $ws_4
+bindsym $mod+Shift+5 move container to workspace 5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -144,6 +149,7 @@ bindsym $mod+r mode "resize"
 
 set $background_color #033649
 set $foreground_color #036564
+set $urgent_text_color #43A7DD
 set $active_text_color #E8DDCB
 set $inactive_text_color #036564
 
@@ -161,7 +167,7 @@ bar {
 	        focused_workspace  $background_color $background_color $active_text_color
 		active_workspace   $background_color $background_color $active_text_color
 		inactive_workspace $background_color $background_color $inactive_text_color
-		urgent_workspace   $background_color $background_color $background_color
+		urgent_workspace   $background_color $background_color $urgent_text_color
 	}
 }
 
@@ -172,7 +178,8 @@ client.focused_inactive $background_color $background_color $active_text_color $
 client.unfocused        $background_color $background_color $active_text_color $background_color
 client.urgent           #900000 #900000 $active_text_color $background_color
 
-new_window none
+# new_window none
+new_window pixel 1
 
 # Gaps
 
