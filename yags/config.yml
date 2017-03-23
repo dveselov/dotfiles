@@ -1,0 +1,8 @@
+format: "{layout}   {time} "
+plugins:
+  time:
+    type: "time"
+    timeFormat: "02:04 AM"
+  layout:
+    type: "kbdd"
+    names: ["en", "ru"]
