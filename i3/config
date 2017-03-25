@@ -94,11 +94,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws_1 "&#xf269; www"
-set $ws_2 "&#xf121; dev"
-set $ws_3 "&#xf120; term"
-set $ws_4 "&#xf1d8; im"
-set $ws_5 "&#xf144; media"
+set $ws_1 "1: www"
+set $ws_2 "2: dev"
+set $ws_3 "3: term"
+set $ws_4 "4: im"
+set $ws_5 "5: media"
 # switch to workspace
 bindsym $mod+1 workspace $ws_1
 bindsym $mod+2 workspace $ws_2
@@ -155,24 +155,6 @@ set $urgent_text_color #43A7DD
 set $active_text_color #E8DDCB
 set $inactive_text_color #036564
 
-bar {
-        i3bar_command i3bar -t
-	status_command yags ~/.config/yags/config.yml
-
-        workspace_buttons yes
-        tray_output primary
-
-	colors {
-                background $background_color
-                statusline $active_text_color
-		#color class       border            back.             text
-	        focused_workspace  $background_color $background_color $active_text_color
-		active_workspace   $background_color $background_color $active_text_color
-		inactive_workspace $background_color $background_color $inactive_text_color
-		urgent_workspace   $background_color $background_color $urgent_text_color
-	}
-}
-
 
 #colors:                border  backgr. text    indicator
 client.focused          $foreground_color $foreground_color $active_text_color $background_color
@@ -189,9 +171,10 @@ gaps inner 10
 smart_gaps on
 
 # Keyboad layouts
-exec --no-startup-id "setxkbmap -layout us,ru"
-exec --no-startup-id "setxkbmap -option 'grp:caps_toggle,grp_led:scroll,compose:ralt'"
+exec_always --no-startup-id "setxkbmap -layout us,ru"
+exec_always --no-startup-id "setxkbmap -option 'grp:caps_toggle,grp_led:scroll,compose:ralt'"
 
-exec --no-startup-id "feh --randomize --bg-fill ~/Pictures/Wallpapers/*"
 exec --no-startup-id "compton -cCGfF -b -i 0.85 --sw-opti"
+exec_always --no-startup-id "feh --randomize --bg-fill ~/Pictures/Wallpapers/*"
 
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
