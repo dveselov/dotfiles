@@ -160,7 +160,7 @@ bar {
 	status_command yags ~/.config/yags/config.yml
 
         workspace_buttons yes
-        tray_output none
+        tray_output primary
 
 	colors {
                 background $background_color
@@ -189,5 +189,9 @@ gaps inner 10
 smart_gaps on
 
 # Keyboad layouts
-exec "setxkbmap -layout us,ru"
-exec "setxkbmap -option 'grp:caps_toggle,grp_led:scroll,compose:ralt'"
+exec --no-startup-id "setxkbmap -layout us,ru"
+exec --no-startup-id "setxkbmap -option 'grp:caps_toggle,grp_led:scroll,compose:ralt'"
+
+exec --no-startup-id "feh --randomize --bg-fill ~/Pictures/Wallpapers/*"
+exec --no-startup-id "compton -cCGfF -b -i 0.85 --sw-opti"
+

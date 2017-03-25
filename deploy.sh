@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 # Install i3 configs
-ln -s `pwd`/i3/config ~/.config/i3/config
+mkdir -p ~/.config/i3/
+ln -sf `pwd`/i3/config ~/.config/i3/config
 
-# Install statusline generator
-go get github.com/pltanton/yags
-
-# Install statusline configs
-mkdir ~/.config/yags
-ln -s `pwd`/yags/config.yml ~/.config/yags/config.yml
-
+# Install polybar configs
+mkdir -p ~/.config/polybar
+ln -sf `pwd`/polybar/launch.sh ~/.config/polybar/launch.sh
+ln -sf `pwd`/polybar/config ~/.config/polybar/config
